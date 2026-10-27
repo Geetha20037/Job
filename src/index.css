@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+:root::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  color: #ffffff;
+  background: #4f46e5;
+}
+
+.page-container {
+  width: min(100% - 32px, 1240px);
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 64px;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #4f46e5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #0f172a;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+
+.section-description {
+  margin-top: 12px;
+  max-width: 600px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(199, 210, 254, 0.28),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #f7f5ff 100%);
+}
+
+.auth-bg {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(199, 210, 254, 0.35),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #f8faff 0%, #ffffff 55%, #f7f5ff 100%);
+}
+
+.font-display {
+  font-family: "Manrope", sans-serif;
+}
+
+.job-card {
+  min-width: 0;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 4s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    width: min(100% - 48px, 1240px);
+  }
+
+  .section-space {
+    padding-block: 80px;
+  }
+
+  .section-heading {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    width: min(100% - 64px, 1240px);
+  }
+
+  .section-space {
+    padding-block: 88px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-container {
+    width: min(100% - 96px, 1320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
